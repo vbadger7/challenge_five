@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+    <h2>Whats next TO-DO?</h2>
+    <div class="task-board">
+        <div class="task-column" id="notStartedColumn" ondrop="drop(event, 'notStartedColumn')" ondragover="allowDrop(event)">
+            <h2>Not Yet Started</h2>
+        </div>
+        <div class="task-column" id="inProgressColumn" ondrop="drop(event, 'inProgressColumn')" ondragover="allowDrop(event)">
+            <h2>In Progress</h2>
+        </div>
+        <div class="task-column" id="completedColumn" ondrop="drop(event, 'completedColumn')" ondragover="allowDrop(event)">
+            <h2>Completed</h2>
+        </div>
+    </div>
+    <button id="createTaskBtn">Create New Task</button>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="taskForm">
+                <label for="taskTitle">Task Title:</label>
+                <input type="text" id="taskTitle" required><br>
+                <label for="taskDueDate">Task Due Date:</label>
+                <input type="date" id="taskDueDate" required><br>
+                <label for="taskDescription">Task Description:</label><br>
+                <textarea id="taskDescription" rows="4" required></textarea><br>
+                <button type="submit" id="addTaskBtn">Add Task</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./assets/script.js"></script>
+</body>
+</html>
